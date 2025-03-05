@@ -9,16 +9,15 @@ import jakarta.persistence.Id;
 public class TodoItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    public String id;
 
-    private String name;
+    public String name;
 
-    private Boolean checked;
+    public Boolean checked;
 
 
     public TodoItem(String name, Boolean checked) {
         this.name = name;
         this.checked = checked;
     }
-
 }

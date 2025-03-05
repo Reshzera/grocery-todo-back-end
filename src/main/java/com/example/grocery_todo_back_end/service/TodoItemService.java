@@ -11,8 +11,9 @@ public class TodoItemService {
     @Autowired
     private TodoItemRepository todoListRepository;
 
-    public void createItem(CreateTodoItemDto newTodo) {
+    public TodoItem createItem(CreateTodoItemDto newTodo) {
         TodoItem createdItem = new TodoItem(newTodo.name, newTodo.checked);
         this.todoListRepository.save(createdItem);
+        return createdItem;
     }
 }
