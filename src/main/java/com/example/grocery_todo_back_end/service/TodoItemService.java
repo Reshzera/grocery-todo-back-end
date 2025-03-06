@@ -13,7 +13,7 @@ public class TodoItemService {
 
     public TodoItem createItem(CreateTodoItemDto newTodo) {
         TodoItem createdItem = new TodoItem(newTodo.name, newTodo.checked);
-        this.todoListRepository.save(createdItem);
+        todoListRepository.save(createdItem);
         return createdItem;
     }
 }
