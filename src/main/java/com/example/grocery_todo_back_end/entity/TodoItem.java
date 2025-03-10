@@ -10,11 +10,20 @@ public class TodoItem {
     public String name;
     public Boolean checked;
 
-    public TodoItem() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "todo_list_id", nullable = false)
+    public TodoList todoList;
 
+
+    //TODO remove this contructor
     public TodoItem(String name, Boolean checked) {
         this.name = name;
         this.checked = checked;
+    }
+
+    public TodoItem(String name, Boolean checked, TodoList todoList) {
+        this.name = name;
+        this.checked = checked;
+        this.todoList = todoList;
     }
 }
