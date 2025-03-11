@@ -14,4 +14,8 @@ public class TodoList {
 
     @OneToMany(mappedBy = "todoList", cascade = CascadeType.ALL, orphanRemoval = true)
     public List<TodoItem> items;
+
+    public TodoList(String name) {
+        this.name = name;
+    }
 }

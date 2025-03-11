@@ -1,13 +1,12 @@
-package com.example.grocery_todo_back_end.dto;
+package com.example.grocery_todo_back_end.dto.todoItem;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public class CreateTodoItemDto {
+public class UpdateTodoItemDto {
     @NotBlank(message = "Name is mandatory")
     public String name;
 
-    @NotNull(message = "checked is mandatory")
+    @NotNull(message = "Checked is mandatory")
     public Boolean checked;
 }
