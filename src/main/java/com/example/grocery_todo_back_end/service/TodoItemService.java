@@ -23,7 +23,7 @@ public class TodoItemService {
     private TodoListRepository todoListRepository;
 
     public TodoItem createItem(String listId, CreateTodoItemDto newTodo) {
-        TodoList todoList = todoListRepository.findById(listId).orElseThrow(() -> new NotFoundError("Item not found"));
+        TodoList todoList = todoListRepository.findById(listId).orElseThrow(() -> new NotFoundError("List not Found"));
         TodoItem createdItem = new TodoItem(newTodo.name, newTodo.checked, todoList);
         return todoItemRepository.save(createdItem);
     }
